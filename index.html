@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>METAL RUNNER | 2D Pixel-Art Warzone Infinite Runner</title>
+  <meta name="description" content="A fast-paced 2D action runner featuring pixel art, military warzone parallax scrolling, synthesized sound effects, screen shake, and arcade controls.">
+  
+  <!-- Retro arcade font load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Game stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Game Shell Container -->
+  <div id="game-container">
+    
+    <!-- Gameplay canvas -->
+    <canvas id="game-canvas" width="960" height="540"></canvas>
+
+    <!-- In-Game HUD -->
+    <div id="hud-bar" class="hidden">
+      <div class="hud-stat">Dist: <span id="hud-score">0m</span></div>
+      <div class="hud-stat">Best: <span id="hud-highscore">0m</span></div>
+    </div>
+
+    <!-- Start/Menu Overlay Screen -->
+    <div id="start-screen" class="screen-overlay">
+      <h1>METAL RUNNER</h1>
+      <h2>Mission Start</h2>
+      
+      <div class="stats-card">
+        <p>Best Record: <span id="start-highscore" class="highlight-high">0m</span></p>
+      </div>
+
+      <button id="start-btn" class="btn-cyber">Start Mission</button>
+
+      <div class="touch-instruction-bar">
+        Controls: <span class="key-cap">Arrow Up</span> / <span class="key-cap">W</span> / <span class="key-cap">Space</span> to Jump <br>
+        <span class="key-cap">Arrow Down</span> / <span class="key-cap">S</span> to Duck / Slide <br>
+        (Or use Virtual Buttons on mobile layout)
+      </div>
+      
+      <div class="controls-legend">
+        <div>JUMP: UP / W / SPACE</div>
+        <div>DUCK: DOWN / S</div>
+      </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen-overlay hidden">
+      <h1 class="game-over-title">MISSION FAILED</h1>
+      <h2>Soldier Defeated</h2>
+
+      <div class="stats-card">
+        <p>Distance Reached: <span id="gameover-score" class="highlight-score">0m</span></p>
+        <p>Record Distance: <span id="gameover-highscore" class="highlight-high">0m</span></p>
+      </div>
+
+      <button id="restart-btn" class="btn-cyber btn-pink">Restart Mission</button>
+      
+      <div class="controls-legend">
+        <div>Press JUMP key to restart</div>
+      </div>
+    </div>
+
+    <!-- On-screen mobile touch buttons -->
+    <div id="mobile-controls-overlay" class="hidden">
+      <button id="touch-jump-btn" class="touch-action-btn">LOMPAT</button>
+      <button id="touch-duck-btn" class="touch-action-btn">MENUNDUK</button>
+    </div>
+
+  </div>
+
+  <!-- ------------------------------ -->
+  <!-- JavaScript Game Implementation -->
+  <!-- ------------------------------ -->
+  <script src="audio.js"></script>
+  <script src="sprites.js"></script>
+  <script src="config.js"></script>
+  <script src="player.js"></script>
+  <script src="obstacle.js"></script>
+  <script src="background.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
